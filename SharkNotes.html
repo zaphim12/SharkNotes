@@ -1,0 +1,97 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 49%;
+  padding: 10px;
+  height: 2000px; /* Should be removed. Only for demonstration */
+}
+
+.columnMini {
+  float: left;
+  width: 10px;
+  height: 2000px; /* Should be removed. Only for demonstration */
+  opacity: 0;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+body {
+background-image: url("SharkNotes.png");
+background-repeat: no-repeat;
+background-size: cover; 
+}
+
+</style>
+
+<script src="scripts.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- <script src="r.js"></script> -->
+
+<script src="bundle.js"></script>
+
+<!-- <script>
+  var cheerio = require('cheerio');
+  var request = require('request');
+  const imageSearch = require("image-search-google");
+</script> -->
+
+</head>
+<body>
+
+<h1>SharkNotes Display Platform</h1>
+
+<style>
+  #byte_content {
+    margin: 5px 0;
+    max-height: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  #byte_range { margin-top: 5px; }
+</style>
+
+<input type="file" id="files" name="file" /> 
+<span class="readBytesButtons">
+  <button>Read file</button>
+</span>
+<div id="byte_range"></div>
+
+
+<div class="row">
+
+  <div class="column" style="background-color:rgb(225, 225, 225);">
+    <h2>Notes:</h2>
+    <div id="byte_content"></div>
+  </div>
+  <div class="columnMini" style="background-color:rgb(0, 0, 0);"></div>
+  <div class="column" style="background-color:rgb(235, 235, 235);">
+    <h2>SharkNotes:</h2>
+    <!-- <img id="image_content" [src]="getImage("cat", function(r){console.log(r)})"> -->
+    <!-- <img src=getImage("cat", function(r){console.log(r)})> -->
+
+    <!-- <input type="button" value="Get selection" onmousedown="getSelText()">  -->
+    <input type="button" value="Sharkify" onclick="selectAndDefine()">
+    <div id="definitionText"></div>
+    
+    <div id="definedText">
+      <img id="definedPicture">
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
